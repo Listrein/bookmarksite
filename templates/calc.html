@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %}Калькулятор{% endblock %}
+
+{% block content %}
+  <ul class="wrapper">
+    <li class="form-row">
+      <label for="n5000">Введите количество 5000:</label>
+      <input type="number" id="n5000" name="5000" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n2000">Введите количество 2000:</label>
+      <input type="number" id="n2000" name="2000" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n1000">Введите количество 1000:</label>
+      <input type="number" id="n1000" name="1000" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n500">Введите количество 500:</label>
+      <input type="number" id="n500" name="500" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n200">Введите количество 200:</label>
+      <input type="number" id="n200" name="200" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n100">Введите количество 100:</label>
+      <input type="number" id="n100" name="100" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n50">Введите количество 50:</label>
+      <input type="number" id="n50" name="50" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n10">Введите количество 10:</label>
+      <input type="number" id="n10" name="10" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n5">Введите количество 5:</label>
+      <input type="number" id="n5" name="5" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n2">Введите количество 2:</label>
+      <input type="number" id="n2" name="2" /><br>
+    </li>
+    <li class="form-row">
+      <label for="n500">Введите количество 1:</label>
+      <input type="number" id="n1" name="1" /><br>
+    </li>
+    <li class="form-row">
+      <label for="smallmoney1">Введите мелочь 1:</label>
+      <input type="number" id="smallmoney1" name="smallmoney1" /><br>
+    </li> 
+    <li class="form-row">
+      <label for="smallmoney2">Введите мелочь 2:</label>
+      <input type="number" id="smallmoney2" name="smallmoney2" /><br>
+    </li>
+    <li class="form-row">
+      <label for="smallmoney3">Введите мелочь 3:</label>
+      <input type="number" id="smallmoney3" name="smallmoney3" /><br>
+    </li>
+    <li class="form-row">
+      <label for="summ_1_c">Сумма в 1С:</label>
+      <input type="number" id="summ_1_c" name="summ_1_c" /><br>
+    </li>
+</ul>
+<p id="result">Всего наличных: <span id="sumResult">0</span></p>
+<p id="result1">Разница 1с: <span id="sumResult1с">0</span></p>
+<br>
+<button onclick="sumNumbers()">Посчитать</button>
+
+
+<script>
+    function sumNumbers() {
+      // Получаем значения из полей ввода
+      var num5000 = parseFloat(document.getElementById('n5000').value) || 0;
+      var num2000 = parseFloat(document.getElementById('n2000').value) || 0;
+      var num1000 = parseFloat(document.getElementById('n1000').value) || 0;
+      var num500 = parseFloat(document.getElementById('n500').value) || 0;
+      var num200 = parseFloat(document.getElementById('n200').value) || 0;
+      var num100 = parseFloat(document.getElementById('n100').value) || 0;
+      var num50 = parseFloat(document.getElementById('n50').value) || 0;
+      var num10 = parseFloat(document.getElementById('n10').value) || 0;
+      var num5 = parseFloat(document.getElementById('n5').value) || 0;
+      var num2 = parseFloat(document.getElementById('n2').value) || 0;
+      var num1 = parseFloat(document.getElementById('n1').value) || 0;
+      var smallmoney1 = parseFloat(document.getElementById('smallmoney1').value) || 0;
+      var smallmoney2 = parseFloat(document.getElementById('smallmoney2').value) || 0;
+      var smallmoney3 = parseFloat(document.getElementById('smallmoney3').value) || 0;
+      var summ_1_c = parseFloat(document.getElementById('summ_1_c').value) || 0;
+      // Рассчитываем сумму
+      var sum5000 = num5000 * 5000;
+      var sum2000 = num2000 * 2000;
+      var sum1000 = num1000 * 1000;
+      var sum500 = num500 * 500;
+      var sum200 = num200 * 200;
+      var sum100 = num100 * 100;
+      var sum50 = num50 * 50;
+      var sum10 = num10 * 10;
+      var sum5 = num5 * 5;
+      var sum2 = num2 * 2;
+      var sum1 = num1 * 1;
+      // Сумма наличных
+      var sum = sum5000 + sum2000 + sum1000 + sum500 + sum200 + sum100 + sum50 + sum10 + sum5 + sum2 + sum1 + smallmoney1 + smallmoney2 + smallmoney3;
+      //Разница с 1С
+      var summax = (sum5000 + sum2000 + sum1000 + sum500 + sum200 + sum100 + sum50 + sum10 + sum5 + sum2 + sum1 + smallmoney1 + smallmoney2 + smallmoney3) - summ_1_c;
+      // Выводим результат
+      document.getElementById('sumResult').textContent = sum;
+      document.getElementById('sumResult1с').textContent = summax;
+    }
+    </script>
+
+{% endblock %}

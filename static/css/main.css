@@ -1,0 +1,171 @@
+body, h1,h2, h3, h4, p, a {
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+}
+*{
+	box-sizing:border-box;
+}
+body {
+	background-color: rgb(186, 223, 221);
+	font-family: "Roboto", sans-serif;
+}
+
+input {
+    width: 100px;
+}
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background:rgb(186, 223, 221);
+}
+
+.wrapper {
+    list-style-type: none;
+    padding: 0;
+    border-radius: 3px;
+}
+.form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: .1em;
+}
+.form-row > label {
+    padding: .1em 1em .1em 0;
+    flex: 1;
+}
+.form-row > input {
+    flex: 2;
+}
+.form-row > input {
+    padding: .1em;
+}
+
+.new {
+    color:#e42626;
+}
+
+.name {
+    font-weight: 700;}
+
+
+.header__inner {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    width: 100%;
+    max-width: 1060px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+    position: relative;
+}
+
+.header__tel > a {
+    font-family: 'ProximaNova-Bold', sans-serif;
+    font-size: 0.93rem;
+    font-weight: 800;
+    color: #1c1c1c;
+    text-decoration: none;
+}
+
+.topnav {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.topnav__icon {
+    display: none;
+}
+
+.topnav__link {
+    margin-right: 1.8rem;
+    color: #1c1c1c;
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-family: ProximaNova-Regular, sans-serif;
+    -webkit-transition: -webkit-text-decoration 3s linear;
+    transition: -webkit-text-decoration 3s linear;
+    transition: text-decoration 3s linear;
+    transition: text-decoration 3s linear, -webkit-text-decoration 3s linear;
+}
+
+.topnav__link:hover {
+    text-decoration: underline;
+}
+
+.topnav__btn {
+    padding: 9px 20px;
+    margin-left: -15px;
+    font-family: ProximaNova-Bold, sans-serif;
+    color: #fff;
+    font-size: .8rem;
+    background: linear-gradient(69deg, #c11717, #e42626);
+    text-decoration: none;
+    border-radius: 5px;
+}
+.footer {
+	text-align: center;
+	list-style: none;
+	background-color: rgb(186, 223, 221);
+	overflow: hidden;
+}
+
+.underline-one {
+	color: #000000; /* Цвет обычной ссылки */
+	position: relative;
+	cursor: pointer;
+	text-decoration: none; /* Убираем подчеркивание */
+}
+.underline-one:after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: -3px;
+	width: 0;
+	height: 2px; /* Высота линии */
+	background-color: black; /* Цвет подчеркивания при исчезании линии*/
+	transition: width 0.5s; /* Время эффекта */
+}
+.underline-one:hover:after {
+	content: "";
+	width: 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	height: 2px; /* Высота линии */
+	background-color: red; /* Цвет подчеркивания при появлении линии*/
+	transition: width 0.5s; /* Время эффекта */
+}
+@media screen and (max-width: 996px) {
+    .topnav {
+        display: none;
+    }
+
+    .topnav__btn {
+        margin-right: 20px;
+    }
+
+    .topnav__icon {
+        display: block;
+        background: #fff;
+        border: none;
+        font-size: 25px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        position: absolute;
+        top: 6px;
+        right: 10px;
+    }
+}

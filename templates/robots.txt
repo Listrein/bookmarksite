@@ -1,0 +1,4 @@
+User-agent: 
+Crawl-delay: 1
+Host: https://bda58.ru
+Sitemap: https://bda58.ru/sitemap.xml
