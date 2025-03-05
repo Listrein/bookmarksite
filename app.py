@@ -48,11 +48,6 @@ def akb():
     return render_template('akb.html')
     
     
-@app.route('/calc')
-def calc():
-    return render_template('calc.html')
-
-
 @app.route('/sitemap.xml')
 def sitemap():
     return render_template('sitemap.xml')
